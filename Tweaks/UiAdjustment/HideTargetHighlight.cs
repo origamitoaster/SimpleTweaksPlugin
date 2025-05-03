@@ -12,6 +12,7 @@ namespace SimpleTweaksPlugin.Tweaks.UiAdjustment;
 [TweakAutoConfig]
 [TweakAuthor("darkarchon + ori")]
 [TweakReleaseVersion("1.10.9.2")]
+
 public unsafe class HideTargetHighlight : UiAdjustments.SubTweak {
     private readonly ushort[] nonCombatTerritory = {
         1055, // Island Sanctuary

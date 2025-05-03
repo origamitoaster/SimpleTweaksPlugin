@@ -10,7 +10,7 @@ namespace SimpleTweaksPlugin.Tweaks.UiAdjustment;
 [TweakName("Hide Target Hightlight/Outline")]
 [TweakDescription("Allow hiding the potential target outline while not in combat or dungeons.")]
 [TweakAutoConfig]
-[TweakAuthor("ori")]
+[TweakAuthor("darkarchon + ori")]
 [TweakReleaseVersion("1.10.9.2")]
 public unsafe class HideTargetHighlight : UiAdjustments.SubTweak {
     private readonly ushort[] nonCombatTerritory = {

@@ -81,12 +81,12 @@ jobs:
       - name: Extract [Release]
         if: "contains(github.event.head_commit.message, '[release]')"
         run: |
-          Expand-Archive -Force ./bin/x64/Release/SimpleTweaksPlugin/latest.zip ./Artifact
+          Expand-Archive -Force ./bin/Release/SimpleTweaksPlugin/latest.zip ./Artifact
 
       - name: Extract [Debug]
         if: "!contains(github.event.head_commit.message, '[release]')"
         run: |
-          Expand-Archive -Force ./bin/x64/Debug/SimpleTweaksPlugin/latest.zip ./Artifact
+          Expand-Archive -Force ./bin/Debug/SimpleTweaksPlugin/latest.zip ./Artifact
           
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4

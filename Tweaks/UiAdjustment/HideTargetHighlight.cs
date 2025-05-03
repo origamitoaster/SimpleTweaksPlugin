@@ -12,7 +12,6 @@ namespace SimpleTweaksPlugin.Tweaks.UiAdjustment;
 [TweakAutoConfig]
 [TweakAuthor("darkarchon + ori")]
 [TweakReleaseVersion("1.10.9.2")]
-
 public unsafe class HideTargetHighlight : UiAdjustments.SubTweak {
     private readonly ushort[] nonCombatTerritory = {
         1055, // Island Sanctuary
@@ -29,7 +28,7 @@ public unsafe class HideTargetHighlight : UiAdjustments.SubTweak {
     [FrameworkUpdate(NthTick = 30)] private void FrameworkUpdate() => Update();
 
     private void Update(bool reset = false) {
-        var targetCircleShown = Service.GameConfig.UiControl.GetBool("TargetLineType");
+        var targetCircleShown = Service.GameConfig.UiControl.GetBool("ObjectBorderingType");
         bool requestToBeShown = false;
         bool requestToHide = false;
 
@@ -47,9 +46,9 @@ public unsafe class HideTargetHighlight : UiAdjustments.SubTweak {
         }
 
         if (!targetCircleShown && requestToBeShown) {
-            Service.GameConfig.UiControl.Set("TargetLineType", 1);
+            Service.GameConfig.UiControl.Set("ObjectBorderingType", 1);
         } else if (targetCircleShown && requestToHide) {
-            Service.GameConfig.UiControl.Set("TargetLineType", 0);
+            Service.GameConfig.UiControl.Set("ObjectBorderingType", 0);
         }
     }
 
